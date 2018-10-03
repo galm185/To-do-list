@@ -1,0 +1,193 @@
+body {background: url("images/bg.jpg") top center;}
+
+header {
+    width:  100%;
+    padding-top: 2%;
+    margin-bottom:  2%;
+}
+header h1 {text-align:  center;width: 31%;margin:  auto;}
+
+header h1 img {display: block;width: 100%;}
+
+/*    main    */
+main {
+	text-align: center;
+	display:  flex;
+	justify-content:  center;
+	align-items:  center;
+	flex-wrap:  wrap;
+}
+main form {width: 100%;}
+
+main form div#note_pad label {width:  100%;}
+
+main form div#note_pad label textarea {
+	width: 40rem;background:  url("images/lines.jpg") center center;
+	background-size: contain;
+	height: 11rem;
+	padding: 2rem 0 0 5.5rem;
+	box-sizing: border-box;
+	font-size: 1.3em;
+	line-height: 1.7em;
+	font-family:  'Kalam', cursive;
+}
+main form div#time_date {display: inline-block;padding-top: 1%;}
+main form div#time_date label input {
+	background: rgba(255,255,255,0.25);
+	border:  2px solid #000;
+	border-radius:  7px;
+	font-size:  1.2rem;
+	font-weight: bold;
+	font-family: kalam;cursor: pointer;
+}
+
+main form div#submit {display:  inline-block;}
+
+main form div#submit label input {
+	background: rgba(255,255,255,0.25);
+	border: 2px solid #000;
+	border-radius: 7px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	font-family:  kalam;
+	cursor:  pointer;
+}
+
+div#notes_wrapper {
+    width: 100%;
+    padding: 4% 6%;
+    box-sizing:  border-box;
+    display:  flex;
+    flex-wrap:  wrap;
+    font-family: 'Kalam', cursive;
+}
+
+div#notes_wrapper > div > div {
+	box-sizing:  border-box;
+	border-bottom: 35px solid transparent;
+	border-left: 35px solid #FDDD3A;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transition: all 0.4s ease;
+	background: url("images/bg.jpg") bottom right;
+	z-index: 2;
+}
+
+@keyframes change_height {
+    from {height: 0;}
+    to {height: 16rem;}
+}
+@keyframes change_opacity {
+  	0%   { opacity: 0; }
+  	100% { opacity: 1; }
+}
+
+div#notes_wrapper > div > div:hover {
+	width: 0px;
+	height: 0px;
+	border-bottom: 50px solid transparent;
+    border-left: 50px solid #FDDD3A;
+}
+div#notes_wrapper > div > div:hover:before {box-shadow: 0 24px 30px rgba(0, 0, 0, .3);}
+
+div#notes_wrapper > div > div:before {
+	border-bottom: 30px solid transparent;
+	border-right: 30px solid transparent;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transition: all 0.4s ease;
+	background: transparent;
+}
+
+div#notes_wrapper > div:before {
+	content: "";
+	background: url("images/pin.png") no-repeat center center;
+	background-size: 100%;
+	width: 3.3rem;
+	height: 3.3rem;
+	position: absolute;
+	top: -22px;
+	left: 6.2rem;
+}
+
+#notes_wrapper > div > p {
+    text-align: left;
+    font-size:  1.5em;
+    font-weight:  bold;
+    min-height: 9rem;
+    max-height: 9rem;
+    overflow-y:  scroll;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 1;
+    animation: change_opacity 3s ease;
+}
+
+#notes_wrapper > div > span {
+	width: 100%;
+	text-align:  left;
+	display:  block;
+	animation: change_opacity 3s ease;
+}
+
+#notes_wrapper > div {
+	background: #FEFF99;
+	width: 14rem;
+	height: 16rem;
+	position:  relative;
+	margin: 2%;
+	padding: 1.5rem 1rem;
+	display: block;
+	animation-name: change_height;
+	animation-duration: 2s;
+}
+
+
+#notes_wrapper > div > button {	
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: transparent;
+	border: none;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+#error .ok {display: none;}
+
+span#error {
+    top: 11.5rem;
+    left: 22.4rem;
+    font-size: 1.5rem;
+    font-weight:  bold;
+    font-family: kalam;
+    color: red;
+    text-shadow: 2px 2px 0 #810000, -1px -1px 0 #810000, 1px -1px 0 #810000, -1px 1px 0 #810000, 1px 1px 0 #810000;
+    display:  block;
+}
+
+.required {border: 2px solid red;}
+
+#notes_wrapper > div > p::-webkit-scrollbar {width: 10px;}
+
+#notes_wrapper > div > p::-webkit-scrollbar-track {background: #FEFF99;}
+
+#notes_wrapper > div > p::-webkit-scrollbar-thumb {background: #FDE56F;}
+
+#notes_wrapper > div > p::-webkit-scrollbar-thumb:hover {background: #FDDD3A;}
+
+small {
+	position: absolute;
+	top: 1%;
+	left: 1%;
+	font-size: 1.2rem;
+	cursor: help;
+	border:  1px solid #000;
+	border-radius: 25px;
+	height: 1.8rem;
+	width: 1.5rem;
+	padding-left: 0.3rem;
+	background:  rgba(255,255,255,0.25);
+}
